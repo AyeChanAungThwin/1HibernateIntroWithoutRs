@@ -22,7 +22,7 @@ public class App {
 		List<Person> people = personDao.findAll();
 		for (Person prn: people) {
 			//String is immutable in java.
-			StringBuilder sb=dependency.createStringBuilder(true); //To reduce heap size
+			StringBuilder sb=dependency.createStringBuilder(); //To reduce heap size
 			sb.append("Person [id="+prn.getId());
 			sb.append(", name="+prn.getName());
 			sb.append(", email="+prn.getEmail());
