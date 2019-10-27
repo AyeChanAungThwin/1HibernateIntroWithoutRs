@@ -21,34 +21,16 @@ public class DependencyRegistry {
 		}
 		return instance;
 	}
-	
-	private Person person;
-	
+
 	public Person createPerson() {
-		if (person==null) {
-			person=new Person();
-		}
-		return person;
+		return new Person();
 	}
-	
-	private PersonDao personDao;
 	
 	public PersonDao createPersonDao() {
-		if (personDao==null) {
-			personDao=new PersonDao();
-		}
-		return personDao;
+		return new PersonDao();
 	}
 	
-	private StringBuilder sb;
-	
-	public StringBuilder createStringBuilder(boolean isNull) {
-		if (isNull) {
-			sb=null;
-		}
-		if (sb==null) {
-			sb = new StringBuilder();
-		}
-		return sb;
+	public StringBuilder createStringBuilder() {
+		return new StringBuilder();
 	}
 }
