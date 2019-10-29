@@ -15,5 +15,5 @@ public interface IAbstractDao<T extends Serializable> {
 	
 	void delete(T entity);
 	
-	void deleteById(Long entityId);
+	void deleteById(long entityId);
 }
