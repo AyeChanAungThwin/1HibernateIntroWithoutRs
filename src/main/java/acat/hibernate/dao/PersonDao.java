@@ -44,14 +44,8 @@ public class PersonDao extends AbstractDao<Person> {
 	}
 
 	@Override
-	public void deleteById(Long entityId) {
+	public void deleteById(long entityId) {
 		// TODO Auto-generated method stub
 		super.deleteById(entityId);
-	}
-
-	@Override
-	protected Session getCurrentSession() {
-		// TODO Auto-generated method stub
-		return super.getCurrentSession();
 	}
 }
