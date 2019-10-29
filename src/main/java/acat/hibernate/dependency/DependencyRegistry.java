@@ -1,6 +1,7 @@
 package acat.hibernate.dependency;
 
 import acat.hibernate.dao.PersonDao;
+import acat.hibernate.dto.PersonDto;
 import acat.hibernate.entity.Person;
 
 public class DependencyRegistry {
@@ -28,6 +29,10 @@ public class DependencyRegistry {
 	
 	public PersonDao createPersonDao() {
 		return new PersonDao();
+	}
+	
+	public PersonDto createPersonDto(Person person) {
+		return new PersonDto(person);
 	}
 	
 	public StringBuilder createStringBuilder() {
