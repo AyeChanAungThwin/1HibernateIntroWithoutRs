@@ -22,10 +22,10 @@
       <scope>test</scope>
     </dependency>
     
-	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-core</artifactId>
+	    <artifactId>hibernate-entitymanager</artifactId>
 	    <version>5.4.7.Final</version>
 	</dependency>
 	
