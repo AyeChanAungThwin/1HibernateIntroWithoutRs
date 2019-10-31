@@ -36,9 +36,9 @@
 
 - __Id Annotation__
 ```
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;  
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;  
 ```
   - **@Id**= this attribute is an id.
   - **@GeneratedValue(strategy = GenerationType.IDENTITY)** = automatically increase an id whenever the new data is inserted.
