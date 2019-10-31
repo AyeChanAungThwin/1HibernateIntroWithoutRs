@@ -2,8 +2,8 @@
 ## Details
 > [About Hibernate ORM](https://hibernate.org/orm/)
 > There's only one entities; **Person**.
-> One we declared @Entity at the top of a class and add "<property name="hibernate.hbm2ddl.auto">update</property>" in hibernate.cfg.xml, it automatically generates table in your relational database server like Oracle, MySQL, MS SQL.
-> If you change its value to "create", it will create a table using "DROP TABLE IF EXISTS table_name."
+> It's about how to use Object/Relation Mapping using Hibernate.
+> You have to use Hibernate when we want to make CRUD operations in relational database server using Java code.
 
 ## About
 - [X] Insert data using Hibernate
@@ -16,7 +16,7 @@
 ## Explanation
 ###### Person Entity ######
 - The following code generates a table in relational database server.
-- You need your entities to be Serializable if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for the sake of persistence, Serializable is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
+- You need your entities to be **Serializable** if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for _the sake of persistence_, **Serializable** is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
    - ###### Java Code ######
 ```
 @Entity
@@ -74,7 +74,12 @@ public class Person implements Serializable {
 	}
 }
 ```
-- If you didn't add "<property name="hibernate.hbm2ddl.auto">update</property>" in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
+- If you didn't add 
+```
+"<property name="hibernate.hbm2ddl.auto">update</property>"
+```
+in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
+- If you change its value to create, it will create a table using "DROP TABLE IF EXISTS table_name."
    - ###### MySQL Query ######
 ```
 CREATE TABLE person (
