@@ -14,24 +14,22 @@
 - [ ] ON DELETE CASCADE
 
 ## Explanation
-###### Person Entity ######
 - The following code generates a table in relational database server.
 - You need your entities to be **Serializable** if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for _the sake of persistence_, **Serializable** is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
-> __Entity Annotation__
+> __Entity & Table Annotation__
 ```
 @Entity
-```
-   - **@Entity** = this class is an **Entity**. 
-
-> __Table Annotation__
-```
 @Table(name = "person", uniqueConstraints = {
 		@UniqueConstraint(
 				columnNames = {"id", "email", "ph_no"}
 		)
 })
+public class Person {
+	//attributes, getters and setters
+}
 ```
-   - **@Table(name = "custom_name")** = set the table name
+   - **@Entity** = this class is an **Entity**. 
+   - **@Table(name = "custom_name")** = set the table name as **custom_name**
    - **@UniqueConstraint(columnNames = {"id", "email", "ph_no"})** = cannot have duplicate values for that columns
 
 > __Id Annotation__
