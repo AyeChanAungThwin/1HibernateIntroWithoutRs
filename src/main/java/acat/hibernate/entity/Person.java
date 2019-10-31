@@ -8,9 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "person")
+@Table(name = "person", uniqueConstraints = {
+		@UniqueConstraint(
+				columnNames = {"id", "email", "ph_no"}
+		)
+})
 public class Person implements Serializable {
 
 	/**
@@ -22,13 +27,13 @@ public class Person implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "name")
+	@Column(name = "name", length = 50)
 	private String name;
 	
-	@Column(name = "email")
+	@Column(name = "email", length = 50)
 	private String email;
 	
-	@Column(name = "phNo")
+	@Column(name = "ph_no", length = 20)
 	private String phNo;
 
 	public Long getId() {
