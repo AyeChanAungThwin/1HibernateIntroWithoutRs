@@ -58,7 +58,7 @@ private String phNo;
 ```
    - **@Column** = create column with attribute name
    - **@Column(name = "custom_name")** = create column with custom_name
-   - **Other keys**
+   - **Other keys in @Column annotation**
       - unique (default=false)
       - updatable (default=true)
       - nullable (default=true)
