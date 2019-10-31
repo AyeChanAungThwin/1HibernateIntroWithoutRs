@@ -58,8 +58,8 @@ private String phNo;
    - **@Column** = create column with attribute name
    - **@Column(name = "custom_name")** = create column with custom_name
    - **Other keys** = updatable, nullable, scale, precision and length
-      - updatable (true, false)
-      - nullable (true, false)
+      - updatable (default=true)
+      - nullable (default=true)
       - length (default=255)
       - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
       - [About columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
