@@ -31,7 +31,8 @@ public class Person {
    - **@Entity** = this class is an **Entity**. 
    - **@Table(name = "custom_name")** = set the table name as **custom_name**
    - **@UniqueConstraint(columnNames = {"id", "email", "ph_no"})** = cannot have duplicate values for that columns
-
+   - If we don't want to do that, we can add unique=(true,false) in each columns.
+   
 > __Id Annotation__
 ```
 @Id
@@ -58,6 +59,7 @@ private String phNo;
    - **@Column** = create column with attribute name
    - **@Column(name = "custom_name")** = create column with custom_name
    - **Other keys**
+      - unique (default=false)
       - updatable (default=true)
       - nullable (default=true)
       - length (default=255)
