@@ -74,6 +74,7 @@ public class Person implements Serializable {
 	}
 }
 ```
+- If you didn't add "<property name="hibernate.hbm2ddl.auto">update</property>" in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
    - ###### MySQL Query ######
 ```
 CREATE TABLE person (
