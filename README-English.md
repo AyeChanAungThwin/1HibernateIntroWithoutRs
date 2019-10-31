@@ -54,7 +54,12 @@ private Long id;
    - **@Column** = create column with attribute name
    - **@Column(name = "custom_name")** = create column with custom_name
    - **Other keys** = updatable, nullable, scale, precision and length
-   - [About columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
+      - updatable (true, false)
+      - nullable (true, false)
+      - length (default=255)
+      - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
+      - [About columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
+      - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
 
 - __hibernate.cfg.xml__
 - If you didn't add
