@@ -47,7 +47,13 @@ private Long id;
 > __Column Annotation__
 ```
 @Column(name = "name", length = 50)
-	private String name;
+private String name;
+
+@Column(name = "email", length = 50)
+private String email;
+	
+@Column(name = "ph_no", length = 20)
+private String phNo;
 ```
    - **@Column** = create column with attribute name
    - **@Column(name = "custom_name")** = create column with custom_name
