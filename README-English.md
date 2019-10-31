@@ -17,76 +17,58 @@
 ###### Person Entity ######
 - The following code generates a table in relational database server.
 - You need your entities to be **Serializable** if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for _the sake of persistence_, **Serializable** is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
-   - ###### Java Code ######
+- __Entity Annotation__
 ```
 @Entity
-@Table(name = "person")
-public class Person implements Serializable {
+```
+   - **@Entity** = this class is an **Entity**. 
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8915317817868710134L;
+- __Table Annotation__
+```
+@Table(name = "person", uniqueConstraints = {
+		@UniqueConstraint(
+				columnNames = {"id", "email", "ph_no"}
+		)
+})
+```
+   - **@Table(name = "custom_name")** = set the table name
+   - **@UniqueConstraint(columnNames = {"id", "email", "ph_no"})** = cannot have duplicate values for that columns
 
+- __Id Annotation__
+```
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "email")
-	private String email;
-	
-	@Column(name = "ph_no")
-	private String phNo;
-
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhNo() {
-		return phNo;
-	}
-
-	public void setPhNo(String phNo) {
-		this.phNo = phNo;
-	}
-}
+	private Long id;  
 ```
-- If you didn't add 
+  - **@Id**= this attribute is an id.
+  - **@GeneratedValue(strategy = GenerationType.IDENTITY)** = automatically increase an id whenever the new data is inserted.
+  - Use data type Long rather than Integer. because of
+     - Integer = (−32,767 to +32,767) range. 16 bits in size.
+     - Long = (−2,147,483,647 to +2,147,483,647) range. 32 bits in size.
+
+- __Column Annotation__
+```
+@Column(name = "name", length = 50)
+	private String name;
+```
+   - **@Column** = create column with attribute name
+   - **@Column(name = "custom_name")** = create column with custom_name
+   - **Other keys** = updatable, nullable, scale, precision and length
+   - [About columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
+
+- __hibernate.cfg.xml__
+- If you didn't add
 ```
 "<property name="hibernate.hbm2ddl.auto">update</property>"
 ```
 in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
-- If you change its value to create, it will create a table using "DROP TABLE IF EXISTS table_name."
-   - ###### MySQL Query ######
+- If you change its value to "create", Hibernate will drop the table and create whenever you run the program.
 ```
 CREATE TABLE person (
-	id INT AUTO_INCREMENT NOT NULL,
-	name VARCHAR(255),
-	email VARCHAR(255),
-	ph_no VARCHAR(255),
+	id BIGINT AUTO_INCREMENT NOT NULL,
+	name VARCHAR(50),
+	email VARCHAR(50),
+	ph_no VARCHAR(20),
 	PRIMARY KEY (id)
 );
 ```
