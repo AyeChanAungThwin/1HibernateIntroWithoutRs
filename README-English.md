@@ -13,7 +13,7 @@
 - [ ] ON DELETE SET NULL
 - [ ] ON DELETE CASCADE
 
-## Explanation
+## Explanation of an Entity
 - The following code generates a table in relational database server.
 - You need your entities to be **Serializable** if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for _the sake of persistence_, **Serializable** is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
 > __Entity & Table Annotation__
@@ -74,6 +74,8 @@ private String phNo;
 ```
 in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
 - If you change its value to "create", Hibernate will drop the table and create whenever you run the program.
+
+##MySQL database##
 ```
 CREATE TABLE person (
 	id BIGINT AUTO_INCREMENT NOT NULL,
