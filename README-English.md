@@ -17,13 +17,13 @@
 ###### Person Entity ######
 - The following code generates a table in relational database server.
 - You need your entities to be **Serializable** if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for _the sake of persistence_, **Serializable** is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
-__Entity Annotation__
+> __Entity Annotation__
 ```
 @Entity
 ```
    - **@Entity** = this class is an **Entity**. 
 
-__Table Annotation__
+> __Table Annotation__
 ```
 @Table(name = "person", uniqueConstraints = {
 		@UniqueConstraint(
@@ -34,7 +34,7 @@ __Table Annotation__
    - **@Table(name = "custom_name")** = set the table name
    - **@UniqueConstraint(columnNames = {"id", "email", "ph_no"})** = cannot have duplicate values for that columns
 
-__Id Annotation__
+> __Id Annotation__
 ```
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,7 +46,7 @@ private Long id;
      - Integer = (−32,767 to +32,767) range. 16 bits in size.
      - Long = (−2,147,483,647 to +2,147,483,647) range. 32 bits in size.
 
-__Column Annotation__
+> __Column Annotation__
 ```
 @Column(name = "name", length = 50)
 	private String name;
@@ -61,7 +61,7 @@ __Column Annotation__
       - [About columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
       - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
 
-__hibernate.cfg.xml__
+> __hibernate.cfg.xml__
 - If you didn't add
 ```
 "<property name="hibernate.hbm2ddl.auto">update</property>"
