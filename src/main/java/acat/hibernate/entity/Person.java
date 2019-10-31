@@ -8,14 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "person", uniqueConstraints = {
-		@UniqueConstraint(
-				columnNames = {"id"}
-		)
-})
+@Table(name = "person")
 public class Person implements Serializable {
 
 	/**
