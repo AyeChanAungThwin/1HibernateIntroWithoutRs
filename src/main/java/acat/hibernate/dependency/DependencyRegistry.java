@@ -1,8 +1,6 @@
 package acat.hibernate.dependency;
 
-import acat.hibernate.dao.PersonDao;
-import acat.hibernate.dto.PersonDto;
-import acat.hibernate.entity.Person;
+import java.lang.reflect.InvocationTargetException;
 
 public class DependencyRegistry {
 
@@ -22,20 +20,30 @@ public class DependencyRegistry {
 		}
 		return instance;
 	}
-
-	public Person createPerson() {
-		return new Person();
-	}
 	
-	public PersonDao createPersonDao() {
-		return new PersonDao();
-	}
-	
-	public PersonDto createPersonDto(Person person) {
-		return new PersonDto(person);
-	}
-	
-	public StringBuilder createStringBuilder() {
-		return new StringBuilder();
+	@SuppressWarnings("unchecked")
+	public Object getInstance(Class className) {
+		try {
+			return className.getDeclaredConstructor().newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
