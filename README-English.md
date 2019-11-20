@@ -15,8 +15,14 @@
 ## What is Hibernate?
 - [About Hibernate ORM](https://hibernate.org/orm/)
 - Hibernate ORM (Hibernate in short) is an object-relational mapping tool for the Java programming language. It provides a framework for mapping an object-oriented domain model to a relational databases like Oracle, MySQL, MS SQL, etc. Hibernate also provides data query and retrieval facilities.
-- Hibernate provides transparent persistence for Plain Old Java Objects (POJOs). The only strict requirement for a persistent class is a no-argument constructor, though not necessarily (public).
+- Hibernate provides transparent persistence for Plain Old Java Objects (POJOs). The only strict requirement for a persistent class is a no-argument constructor, though not necessarily (public) because the function of DTO still stands.
 - Hibernate provides HQL query i.e., same query for every relational database server.
+
+# What is DAO?
+- DAO(Data Access Object) is the relationship between SQL Server and Java Object. It fetches the data from database and store it in Java Object.
+
+# What is DTO?
+- DTO(Data Transfer Object) is the carrier of data of an object. In Hibernate, when we get a method from dao, **Session** of Hibernate is closed and lead to LazyInitializationException. So basically, DTO saves and use to transfer data of DAO.
 
 ## Setting up the project
 - Press Alt+Shift+N and create _Maven Project_.
@@ -43,7 +49,7 @@
 ```
 in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can write SQL query and create it yourself.
 - If you change its value to "create", Hibernate will drop the table and create a new table whenever you run the program.
-- HibernateUtils starts the connection to your database server.
+- With HibernateUtils, get the connection between your database server and Java.
 
 ## Diagrams
 - ER Diagram
