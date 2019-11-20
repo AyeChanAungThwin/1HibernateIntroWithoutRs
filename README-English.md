@@ -66,63 +66,40 @@ public class Person {
 
 ## Explanation of Annotations
 - **@Entity**
-  - To Signals Hibernate that this is an Entity.
+  - To signals Hibernate that this is an Entity.
 - **@Table(name="custom_name")**
   - To signals Hibernate that this is the table. If you only use **@Table**, Hibernate will automatically set the name with the name of the Java Class but will lowercase characaters i.e., "person."
-
-## Explanation of an Entity
-- The following code generates a table in relational database server.
-- You need your entities to be **Serializable** if you need to transfer them over-the-wire (serialize them to some other representation), store them in http session (which is in turn serialized to hard disk by the servlet container), etc. Just for _the sake of persistence_, **Serializable** is not needed, at least with Hibernate. But it is a best practice to make them Serializable.
-> __Entity & Table Annotation__
+  - **More with @Table annotation**
+    - **@UniqueConstraint** is used when the columns cannot have duplicate values. Or you can set it in **@Column(unique=true)** and default is false.
 ```
-@Entity
 @Table(name = "person", uniqueConstraints = {
 		@UniqueConstraint(
 				columnNames = {"id", "email", "ph_no"}
 		)
 })
-public class Person {
-	//attributes, getters and setters
-}
 ```
-   - **@Entity** = this class is an **Entity**. 
-   - **@Table(name = "custom_name")** = set the table name as **custom_name**
-   - **@UniqueConstraint(columnNames = {"id", "email", "ph_no"})** = cannot have duplicate values for that columns
-   - If we don't want to do that, we can add unique=(true,false) in each columns.
-   
-> __Id Annotation__
-```
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;  
-```
-  - **@Id**= this attribute is an id.
-  - **@GeneratedValue(strategy = GenerationType.IDENTITY)** = automatically increase an id whenever the new data is inserted.
+- **@Id**
+  - To signals Hibernate that this is an ID.
   - Use data type Long rather than Integer. because of
      - Integer = (−32,767 to +32,767) range. 16 bits in size.
      - Long = (−2,147,483,647 to +2,147,483,647) range. 32 bits in size.
-
-> __Column Annotation__
+- **@GenerateValue(strategy=GenerationType.IDENTITY)**
+  - To signals Hibernate that this ID will auto increment its value.
+- **@Column(name="custom_name")**
+  - To signals Hibernate that this is a column.
+  - **More with @Column annotation**
+    - unique (default=false)
+    - updatable (default=true)
+    - nullable (default=true)
+    - length (default=255)
+    - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
+    - [columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
+    - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
+- Example
 ```
-@Column(name = "name", length = 50)
-private String name;
-
-@Column(name = "email", length = 50)
+@Column(name="email", unique=true, length=20)
 private String email;
-	
-@Column(name = "ph_no", length = 20)
-private String phNo;
 ```
-   - **@Column** = create column with attribute name
-   - **@Column(name = "custom_name")** = create column with custom_name
-   - **Other keys in @Column annotation**
-      - unique (default=false)
-      - updatable (default=true)
-      - nullable (default=true)
-      - length (default=255)
-      - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
-      - [columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
-      - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
 
 > __hibernate.cfg.xml__
 - If you didn't add
