@@ -1,7 +1,7 @@
 # Introduction to Hibernate (Entity Creation, Without Relationship)
 ## Abstract
 > You have to use **Hibernate** when we want to make CRUD operations in relational database server using Java code.
-> If you have _NEVER_ done a project with the basic connectivity between **Java and MySQL Server**, I suggest you learning [this] first.(https://www.javatpoint.com/example-to-connect-to-the-mysql-database)
+> If you have _NEVER_ done a project with the basic connectivity between **Java and MySQL Server**, I suggest you learning [this](https://www.javatpoint.com/example-to-connect-to-the-mysql-database) first.
 
 ## About
 - [X] CRUD with Hibernate
