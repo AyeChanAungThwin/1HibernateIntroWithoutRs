@@ -27,13 +27,13 @@ public class App {
 		person3.setEmail("transporter@gmail.com");
 		person3.setPhNo("+1484020249");
 		
-		//Insert
+		//Insert or Create
 		PersonDao personDao = (PersonDao) dependency.getInstance(PersonDao.class);
 		personDao.save(person1);
 		personDao.save(person2);
 		personDao.save(person3);
 		
-		//Fetch
+		//Fetch or Retrieve
 		List<Person> people = personDao.findAll();
 		for (Person prn: people) {
 			//String is immutable in java.
@@ -65,7 +65,7 @@ public class App {
 			personDao.delete(prn2);
 		}
 		
-		//Wrong update!
+		//Wrong Update!
 		Person prn3 = personDao.findOne(3);
 		PersonDto personDto3 = new PersonDto(prn3);
 		System.out.println(personDto3.getName());

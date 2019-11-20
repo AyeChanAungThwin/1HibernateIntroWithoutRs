@@ -1,17 +1,35 @@
-# Hibernate (Entity Creation, Without Relationship)
-## Details
-> [About Hibernate ORM](https://hibernate.org/orm/)
-> There's only one entities; **Person**.
-> It's about how to use Object/Relation Mapping using Hibernate.
-> You have to use Hibernate when we want to make CRUD operations in relational database server using Java code.
+# Introduction to Hibernate (Entity Creation, Without Relationship)
+## Abstract
+> You have to use **Hibernate** when we want to make CRUD operations in relational database server using Java code.
 
 ## About
+- [X] CRUD with Hibernate
 - [X] Insert data using Hibernate
 - [X] Fetch data using Hibernate
 - [X] Update data using Hibernate
 - [X] Delete data using Hibernate
 - [ ] ON DELETE SET NULL
 - [ ] ON DELETE CASCADE
+
+## What is Hibernate?
+- [About Hibernate ORM](https://hibernate.org/orm/)
+- Hibernate ORM (Hibernate in short) is an object-relational mapping tool for the Java programming language. It provides a framework for mapping an object-oriented domain model to a relational databases like Oracle, MySQL, MS SQL, etc. Hibernate also provides data query and retrieval facilities.
+- Hibernate provides transparent persistence for Plain Old Java Objects (POJOs). The only strict requirement for a persistent class is a no-argument constructor, though not necessarily (public).
+
+## Diagrams
+- ER Diagram
+<img src="images/ER_Diagram.png" alt="Person with 3 attributes, ER Diagram">
+- Relational Schema
+<img src="images/relational_schema.png" alt="Person with 3 attributes, Relational Schema">
+- SQL Query
+```
+create table person(
+	id INT AUTO_INCREMENT NOT NULL,
+	name VARCHAR(50),
+	email VARCHAR(50),
+	PRIMARY KEY (id)
+);
+```
 
 ## Explanation of an Entity
 - The following code generates a table in relational database server.
