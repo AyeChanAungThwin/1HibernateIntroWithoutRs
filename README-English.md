@@ -17,7 +17,7 @@
 - Hibernate provides transparent persistence for Plain Old Java Objects (POJOs). The only strict requirement for a persistent class is a no-argument constructor, though not necessarily (public).
 - Hibernate provides HQL query.
 
-## Setting up Project
+## Setting up the project
 - Press Alt+Shift+N and create _Maven Project_.
 - Add the following dependencies in pom.xml.
 ```
