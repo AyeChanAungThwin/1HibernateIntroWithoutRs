@@ -23,13 +23,52 @@
 <img src="images/relational.png" alt="Person with 3 attributes, Relational Schema">
 - SQL Query
 <pre>
-create table person(
+CREATE TABLE person(
 	id INT AUTO_INCREMENT NOT NULL,
 	name VARCHAR(50),
 	email VARCHAR(50),
+	ph_no VARCHAR(20),
 	PRIMARY KEY (id)
 );
 </pre>
+
+## Java POJO for above diagrams
+- Hibernate will create table in database server with the following POJO. Pretty Easy, right?
+```
+public class Person {
+	private Long id;
+	private String name;
+	private String email;
+	private String ph_no;
+	
+	//getters and setters
+}
+```
+- But We're not done yet! We need to signals the Hibernate with the following annotations.
+```
+@Entity
+@Table(name="person")
+public class Person {
+	@Id
+	@GenerateValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name="name");
+	private String name;
+	
+	@Column(name="email");
+	private String email;
+	
+	@Column(name="ph_no");
+	private String phNo;
+}
+```
+
+## Explanation of Annotations
+- **@Entity**
+  - To Signals Hibernate that this is an Entity.
+- **@Table(name="custom_name")**
+  - To signals Hibernate that this is the table. If you only use **@Table**, Hibernate will automatically set the name with the name of the Java Class but will lowercase characaters i.e., "person."
 
 ## Explanation of an Entity
 - The following code generates a table in relational database server.
