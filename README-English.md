@@ -1,6 +1,7 @@
 # Introduction to Hibernate (Entity Creation, Without Relationship)
 ## Abstract
 > You have to use **Hibernate** when we want to make CRUD operations in relational database server using Java code.
+> Only one suggestion, if you have NEVER done a project with the basic connectivity between **Java and MySQL Server**, learn [this.](https://www.javatpoint.com/example-to-connect-to-the-mysql-database)
 
 ## About
 - [X] CRUD with Hibernate
@@ -15,7 +16,7 @@
 - [About Hibernate ORM](https://hibernate.org/orm/)
 - Hibernate ORM (Hibernate in short) is an object-relational mapping tool for the Java programming language. It provides a framework for mapping an object-oriented domain model to a relational databases like Oracle, MySQL, MS SQL, etc. Hibernate also provides data query and retrieval facilities.
 - Hibernate provides transparent persistence for Plain Old Java Objects (POJOs). The only strict requirement for a persistent class is a no-argument constructor, though not necessarily (public).
-- Hibernate provides HQL query.
+- Hibernate provides HQL query i.e., same query for every relational database server.
 
 ## Setting up the project
 - Press Alt+Shift+N and create _Maven Project_.
