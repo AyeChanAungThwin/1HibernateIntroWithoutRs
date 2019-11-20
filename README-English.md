@@ -22,14 +22,14 @@
 - Relational Schema
 <img src="images/Relational_Schema.png" alt="Person with 3 attributes, Relational Schema">
 - SQL Query
-```
+<pre>
 create table person(
 	id INT AUTO_INCREMENT NOT NULL,
 	name VARCHAR(50),
 	email VARCHAR(50),
 	PRIMARY KEY (id)
 );
-```
+</pre>
 
 ## Explanation of an Entity
 - The following code generates a table in relational database server.
