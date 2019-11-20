@@ -15,6 +15,34 @@
 - [About Hibernate ORM](https://hibernate.org/orm/)
 - Hibernate ORM (Hibernate in short) is an object-relational mapping tool for the Java programming language. It provides a framework for mapping an object-oriented domain model to a relational databases like Oracle, MySQL, MS SQL, etc. Hibernate also provides data query and retrieval facilities.
 - Hibernate provides transparent persistence for Plain Old Java Objects (POJOs). The only strict requirement for a persistent class is a no-argument constructor, though not necessarily (public).
+- Hibernate provides HQL query.
+
+## Setting up Project
+- Press Alt+Shift+N and create _Maven Project_.
+- Add the following dependencies in pom.xml.
+```
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+    <version>5.4.7.Final</version>
+</dependency>
+	
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.18</version>
+</dependency>
+```
+- Add [hibernate.cfg.xml](https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html) under src/main/java
+- If you didn't add
+```
+"<property name="hibernate.hbm2ddl.auto">update</property>"
+```
+in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can write SQL query and create it yourself.
+- If you change its value to "create", Hibernate will drop the table and create a new table whenever you run the program.
+- HibernateUtils starts the connection to your database server.
 
 ## Diagrams
 - ER Diagram
@@ -95,19 +123,6 @@ public class Person {
     - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
     - [columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
     - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
-- Example
-```
-@Column(name="email", unique=true, length=20)
-private String email;
-```
-
-> __hibernate.cfg.xml__
-- If you didn't add
-```
-"<property name="hibernate.hbm2ddl.auto">update</property>"
-```
-in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
-- If you change its value to "create", Hibernate will drop the table and create whenever you run the program.
 
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 -  Created by - Aye Chan Aung Thwin
