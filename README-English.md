@@ -18,9 +18,9 @@
 
 ## Diagrams
 - ER Diagram
-<img src="images/ER_Diagram.png" alt="Person with 3 attributes, ER Diagram">
+<img src="images/erd.png" alt="Person with 3 attributes, ER Diagram">
 - Relational Schema
-<img src="images/Relational_Schema.png" alt="Person with 3 attributes, Relational Schema">
+<img src="images/relational.png" alt="Person with 3 attributes, Relational Schema">
 - SQL Query
 <pre>
 create table person(
@@ -93,15 +93,5 @@ private String phNo;
 in hibernate.cfg.xml, Hibernate won't generate the table in your relational database server. But you can create it yourself.
 - If you change its value to "create", Hibernate will drop the table and create whenever you run the program.
 
-##MySQL database##
-```
-CREATE TABLE person (
-	id BIGINT AUTO_INCREMENT NOT NULL,
-	name VARCHAR(50),
-	email VARCHAR(50),
-	ph_no VARCHAR(20),
-	PRIMARY KEY (id)
-);
-```
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 -  Created by - Aye Chan Aung Thwin
