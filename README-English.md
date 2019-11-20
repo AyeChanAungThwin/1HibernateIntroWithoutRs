@@ -20,7 +20,7 @@
 - ER Diagram
 <img src="images/ER_Diagram.png" alt="Person with 3 attributes, ER Diagram">
 - Relational Schema
-<img src="images/relational_schema.png" alt="Person with 3 attributes, Relational Schema">
+<img src="images/Relational_Schema.png" alt="Person with 3 attributes, Relational Schema">
 - SQL Query
 ```
 create table person(
