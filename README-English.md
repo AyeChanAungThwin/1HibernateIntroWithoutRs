@@ -136,6 +136,7 @@ public class Person {
 - According to my experience, if you're a beginner, your code is understandable for you for a week or a month. But after 2 or 3 months, it's completely lost from your memory. Why? Because there's no logic. Machine understands the machine but what's important is your code must be understandable by human. After you've got familiar with Design Patterns, SOLID principles, Architecture and Application Layering, your project is understandable after you read it again in many years. That's exactly why you should use this logic.
 - You might be thinking that there are too many classes and packages. It's very complex! No!!! no!! no!!! Once you've understand it, it's the easiest way to remember your project for eternity.
 <img src="images/layers.png" alt="Layered Architecture">
+
 - **Controller Layer** 
   - controllers the View and Model. It transfer the further processing to **Service Layer.**
 - **Service Layer**

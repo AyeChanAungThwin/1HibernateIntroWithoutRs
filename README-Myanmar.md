@@ -136,14 +136,15 @@ public class Person {
 - ကျွန်တော့် အတွေ့အကြုံအရ ပြောရမယ်ဆိုရင် ခင်ဗျားက beginnerတစ်ယောက်ဆိုရင် ခင်ဗျားရေးထားတဲ့ codeတွေက တစ်ပတ်၊ တစ်လထိ ခင်ဗျားမှတ်မိနေဦးမယ်၊ နားလည်နေဦးမယ်။ ကြားထဲမှာ ပစ်ထားလိုက်ပြီး နောက် ၂လ ၃လလောက်နေရင် ခင်ဗျားဘာတွေရေးထားမှန်းတောင် ခင်ဗျားမသိတော့ဘူး။ အဲ့ဒါဘာလို့လဲသိလား? Logicမရှိလို့။ စက်ကတော့ ခင်ဗျားဘယ်လိုရေးရေးrunမှာပဲ။ ခင်ဗျားရေးတဲ့ codeက လူနားလည်ဖို့လိုတယ်။ ပြောချင်တာက Design Patterns, SOLID Principles, Architectureနဲ့ ဒီApplication Layerကို ကောင်းကောင်းကြီး သိသွားရင် ခင်ဗျားရေးတဲ့ projectကို နောင်အနှစ်ဘယ်လောက်ကြာမှဖတ်ဖတ်၊ အမြဲနားလည်နေမှာပဲ။ ဒါကြောင့် ဒီlogicကိုသုံးကို သုံးသင့်ပါတယ်။
 - ခင်ဗျားကတော့ ထင်မှာပေါ့။ classတွေကလည်း အများကြီး packageတွေကလည်း အများကြီး။ ရှုပ်နေတာပဲပေါ့။ No no no။ "ခုရှုပ်မှ နောင်ရှင်း"ဆိုတဲ့ စကားပုံလည်းရှိတယ်လေ။ ခုရှုပ်သလိုထင်ရပေမယ့် နောက်ကရင် ဒါကပဲ ရှင်းရှင်းလင်းလင်း မြင်စေမှာပါ။
 <img src="images/layers.png" alt="Layered Architecture">
+
 - **Controller Layer** 
-  - controllers the View and Model. It transfer the further processing to **Service Layer.**
+  - Viewနဲ့ Modelကြားမှာ ထိန်းချုပ်ပြီး လုပ်ရမယ့် အလုပ်တွေကို Service Layerကိုလွှဲပေးပါတယ်။
 - **Service Layer**
-  - is the employee of the **Controller Layer**. It has to do where the **Controller Layer** tells it to do and it transfers the data to the persistance layer using DTO Object.
+  - ပြောရရင် သူက Controllerရဲ့ ဝန်ထမ်းပေါ့။ Controllerခိုင်းသမျှကို လုပ်ရတယ်။ နောက်ပြီး DTO Objectကိုသုံးပြီးတော့ Dataကို သိမ်းမယ့် Persistance Layerဆီကို ပို့ရပါတယ်။
 - **Persistance Layer** 
-  - is used to receive the data from DTO object through **Service Layer**. And then give it to DAO to perform CRUD to the database. 
+  - သူက Service Layerကတဆင့် DTOပေါ်ကနေ သယ်လာတဲ့ Dataတွေကို DAOကို ပေးရတယ်။ DAOကနေတော့ CRUD operationတွေလုပ်ပါတယ်။
 - **Database Layer**
-  - provides connections for the **Persistance Layer** and is the actual connection between the _Actual Database Server and JAVA._
+  - သူကတော့ Persistance Layerအတွက်လိုအပ်တဲ့ connectionကို Database Serverနဲ့ Javaကြားမှာ ချိတ်ပေးပါတယ်။
 
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 - တင်သူ - အေးချမ်းအောင်သွင်
