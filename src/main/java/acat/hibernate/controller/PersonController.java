@@ -81,11 +81,11 @@ public class PersonController {
 		personService.deleteById(id);
 	}
 	
-	public void printResult(Person model) {
+	public void printPersonDetails(Person model) {
 		view.printPersonDetails(model);
 	}
 	
-	public void printResult(List<Person> people) {
+	public void printPersonDetails(List<Person> people) {
 		view.printPersonDetails(people);
 	}
 }

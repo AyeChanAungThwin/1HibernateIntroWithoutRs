@@ -124,11 +124,11 @@ public class App {
 		
 		//Fetch or Retrieve
 		List<Person> people = controller.getAllPeople();
-		controller.printResult(people);
+		controller.printPersonDetails(people);
 		
 		//Update
 		Person prn1 = controller.getById(1);
-		controller.printResult(prn1);
+		controller.printPersonDetails(prn1);
 		
 		if (prn1!=null) {
 			prn1.setName("Aye Chan Aung Thwin");
@@ -137,7 +137,7 @@ public class App {
 		
 		//Delete
 		Person prn2 = controller.getById(2);
-		controller.printResult(prn2);
+		controller.printPersonDetails(prn2);
 		
 		if (prn2!=null) {
 			controller.delete(prn2);
@@ -145,7 +145,7 @@ public class App {
 		
 		//Wrong Update!
 		Person prn3 = controller.getById(3);
-		controller.printResult(prn3);
+		controller.printPersonDetails(prn3);
 		
 		if (prn3!=null) {
 			//Hibernate will auto generate id when id is null.
