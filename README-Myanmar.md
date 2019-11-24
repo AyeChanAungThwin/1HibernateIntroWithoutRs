@@ -137,14 +137,14 @@ public class Person {
 - ခင်ဗျားကတော့ ထင်မှာပေါ့။ classတွေကလည်း အများကြီး packageတွေကလည်း အများကြီး။ ရှုပ်နေတာပဲပေါ့။ No no no။ "ခုရှုပ်မှ နောင်ရှင်း"ဆိုတဲ့ စကားပုံလည်းရှိတယ်လေ။ ခုရှုပ်သလိုထင်ရပေမယ့် နောက်ကရင် ဒါကပဲ ရှင်းရှင်းလင်းလင်း မြင်စေမှာပါ။
 <img src="images/layers.png" alt="Layered Architecture">
 
-- **Controller Layer** 
-  - Viewနဲ့ Modelကြားမှာ ထိန်းချုပ်ပြီး လုပ်ရမယ့် အလုပ်တွေကို Service Layerကိုလွှဲပေးပါတယ်။
-- **Service Layer**
-  - ပြောရရင် သူက Controllerရဲ့ ဝန်ထမ်းပေါ့။ Controllerခိုင်းသမျှကို လုပ်ရတယ်။ နောက်ပြီး DTO Objectကိုသုံးပြီးတော့ Dataကို သိမ်းမယ့် Persistance Layerဆီကို ပို့ရပါတယ်။
-- **Persistance Layer** 
-  - သူက Service Layerကတဆင့် DTOပေါ်ကနေ သယ်လာတဲ့ Dataတွေကို DAOကို ပေးရတယ်။ DAOကနေတော့ CRUD operationတွေလုပ်ပါတယ်။
-- **Database Layer**
-  - သူကတော့ Persistance Layerအတွက်လိုအပ်တဲ့ connectionကို Database Serverနဲ့ Javaကြားမှာ ချိတ်ပေးပါတယ်။
+- **Controller** 
+  - Viewနဲ့ Modelကြားမှာ ထိန်းချုပ်ပြီး လုပ်ရမယ့် အလုပ်တွေကို Serviceဆီကိုလွှဲပေးပါတယ်။
+- **Service**
+  - ပြောရရင် သူက Controllerရဲ့ ဝန်ထမ်းပေါ့။ Controllerခိုင်းသမျှကို လုပ်ရတယ်။ နောက်ပြီး DTO Objectကိုသုံးပြီးတော့ Dataကို သိမ်းမယ့် Repositoryဆီကို ပို့ရပါတယ်။
+- **Repository** 
+  - သူက Serviceကတဆင့် DTOပေါ်ကနေ သယ်လာတဲ့ Dataတွေကို DAOကို ပေးရတယ်။ DAOကနေတော့ CRUD operationတွေလုပ်ပါတယ်။
+- **Database**
+  - သူကတော့ Repositoryအတွက်လိုအပ်တဲ့ connectionကို Database Serverနဲ့ Javaကြားမှာ ချိတ်ပေးပါတယ်။
 
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 - တင်သူ - အေးချမ်းအောင်သွင်

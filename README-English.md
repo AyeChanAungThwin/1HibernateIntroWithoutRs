@@ -137,14 +137,14 @@ public class Person {
 - You might be thinking that there are too many classes and packages. It's very complex! No!!! no!! no!!! Once you've understand it, it's the easiest way to remember your project for eternity.
 <img src="images/layers.png" alt="Layered Architecture">
 
-- **Controller Layer** 
-  - controllers the View and Model. It transfer the further processing to **Service Layer.**
-- **Service Layer**
-  - is the employee of the **Controller Layer**. It has to do where the **Controller Layer** tells it to do and it transfers the data to the persistance layer using DTO Object.
-- **Persistance Layer** 
-  - is used to receive the data from DTO object through **Service Layer**. And then give it to DAO to perform CRUD to the database. 
-- **Database Layer**
-  - provides connections for the **Persistance Layer** and is the actual connection between the _Actual Database Server and JAVA._
+- **Controller** 
+  - controllers the View and Model. It transfer the further processing to **Service.**
+- **Service**
+  - is the employee of the **Controller**. It has to do where the **Controller** tells it to do and it transfers the data to the persistance layer using DTO Object.
+- **Repository** 
+  - is used to receive the data from DTO object through **Service**. And then give it to DAO to perform CRUD to the database. 
+- **Database**
+  - provides connections for the **Repository** and is the actual connection between the _Actual Database Server and JAVA._
 
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 -  Created by - Aye Chan Aung Thwin
