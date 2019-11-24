@@ -2,13 +2,12 @@ package acat.hibernate.dao;
 
 import java.util.List;
 
-import org.hibernate.Session;
-
 import acat.hibernate.entity.Person;
+import acat.hibernate.repository.PersonRepository;
 
-public class PersonDao extends AbstractDao<Person> {
+public class PersonDaoImpl extends AbstractDaoImpl<Person> implements PersonRepository {
 	
-	public PersonDao() {
+	public PersonDaoImpl() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

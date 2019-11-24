@@ -22,6 +22,16 @@ public class PersonDto implements Serializable {
 		this.email=person.getEmail();
 		this.phNo=person.getPhNo();
 	}
+	
+	public Person getEntity() {
+		Person person = new Person();
+		person.setId(this.id);
+		person.setName(this.name);
+		person.setEmail(this.email);
+		person.setPhNo(this.phNo);
+		
+		return person;
+	}
 
 	public Long getId() {
 		return id;

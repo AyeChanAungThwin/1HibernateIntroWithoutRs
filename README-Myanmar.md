@@ -22,7 +22,7 @@
 - DAO(Data Access Object)ဆိုတာက MySQLကနေလာတဲ့ Dataမှန်သမျှကို Objectအဖြစ်ပြောင်းတဲ့အလုပ်ကို လုပ်ရတယ်။ CRUDအလုပ်တွေပေါ့။
 
 ## DTOဆိုတာဘာလဲ?
-- DAOကနေ Objectရဲ့ methodကိုလှမ်းခေါ်တဲ့အခါ LazyInitializationExceptionဆိုတဲ့ Errorတတ်နိုင်တယ်။ Errorတက်ရခြင်းအကြောင်းက Objectရှိပေမယ့် methodကိုခေါ်လိုက်တဲ့အချိန်မှာ Hibernateရဲ့ Sessionက ပိတ်သွားလို့ပဲ။ အဲ့ဒါကြောင့် တစ်နေရာမှာ Objectကိုပြန်သိမ်းပြီးမှ Dataကိုသယ်မှ အဆင်ပြေတော့မှာလေ။ အဲ့ဒါကြောင့် DTOဆိုတဲ့ Objectဆောက်ပြီး dataကို သိမ်းရတယ်။ DTO(Data Transfer Object)ဆိုတာ DAOကနေ ထွက်လာတဲ့ Objectတွေကို သိမ်းတဲ့အလုပ်ကို လုပ်ရတယ်။
+- DTO(Data Transfer Object)က Entityနဲ့တူပေမယ့် သူ့အလုပ်က Dataသယ်တဲ့အလုပ်ဖြစ်ပါတယ်။ DAOကနေ Objectရဲ့ methodကိုလှမ်းခေါ်တဲ့အခါ LazyInitializationExceptionဆိုတဲ့ Errorတတ်နိုင်တယ်။ Errorတက်ရခြင်းအကြောင်းက Objectရှိပေမယ့် methodကိုခေါ်လိုက်တဲ့အချိန်မှာ Hibernateရဲ့ Sessionက ပိတ်သွားလို့ပဲ။ အဲ့ဒါကြောင့် တစ်နေရာမှာ Objectကိုပြန်သိမ်းပြီးမှ Dataကိုသယ်မှ အဆင်ပြေတော့မှာလေ။ အဲ့ဒါကြောင့် DTOဆိုတဲ့ Objectဆောက်ပြီး dataကို သိမ်းရတယ်။ DTOဆိုတာ DAOကနေ ထွက်လာတဲ့ Objectတွေကို သိမ်းတဲ့အလုပ်ကို လုပ်ရတယ်။
 
 ## Projectဆောက်ခြင်း
 - Alt+Shift+Nကိုနှိပ်ပြီး _Maven Project_ကိုဆောက်ပါ။
@@ -130,6 +130,20 @@ public class Person {
     - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
     - [columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
     - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
+    
+## Application Layerချခြင်း
+- Application Layerချတယ်ဆိုတာ အကောင်းဆုံးပါပဲ။ Layerတစ်ခုခြင်းဆီမှာ သူလုပ်ရမယ့် တာဝန်တွေပဲချထားတော့ loose couplingဖြစ်ပြီး teamနဲ့လုပ်တဲ့အခါမှာလည်း လူတိုင်းလွယ်လွယ်ကူကူ နားလည်စေနိုင်ပါတယ်။ ဒီflowက Java Projectမှ မဟုတ်ပါဘူး။ PHPဖြစ်ချင်ဖြစ်မယ်၊ .Netဖြစ်ချင်ဖြစ်မယ်။ ဘယ်projectမဆို ဒီflowကိုသုံးခြင်းအားဖြင့် projectအတွက် လူတိုင်းနားလည်နိုင်တဲ့ designကို ချလို့ရပါတယ်။ Teamနဲ့အလုပ်လုပ်တဲ့အခါ ကိုယ်ရေးချင်သလိုရေးထားရင် အဆင်မပြေနိုင်ဘူး။ တိုတိုပြောရမယ်ဆိုရင် ရေးတဲ့codeတိုင်းက လူတိုင်းအတွက် နားလည်နိုင်မယ့် codeဖြစ်ကိုဖြစ်ရမယ်။ အဲ့ဒါက အရေးအကြီးဆုံးအချက်ပါပဲ။
+- ကျွန်တော့် အတွေ့အကြုံအရ ပြောရမယ်ဆိုရင် ခင်ဗျားက beginnerတစ်ယောက်ဆိုရင် ခင်ဗျားရေးထားတဲ့ codeတွေက တစ်ပတ်၊ တစ်လထိ ခင်ဗျားမှတ်မိနေဦးမယ်၊ နားလည်နေဦးမယ်။ ကြားထဲမှာ ပစ်ထားလိုက်ပြီး နောက် ၂လ ၃လလောက်နေရင် ခင်ဗျားဘာတွေရေးထားမှန်းတောင် ခင်ဗျားမသိတော့ဘူး။ အဲ့ဒါဘာလို့လဲသိလား? Logicမရှိလို့။ စက်ကတော့ ခင်ဗျားဘယ်လိုရေးရေးrunမှာပဲ။ ခင်ဗျားရေးတဲ့ codeက လူနားလည်ဖို့လိုတယ်။ ပြောချင်တာက Design Patterns, SOLID Principles, Architectureနဲ့ ဒီApplication Layerကို ကောင်းကောင်းကြီး သိသွားရင် ခင်ဗျားရေးတဲ့ projectကို နောင်အနှစ်ဘယ်လောက်ကြာမှဖတ်ဖတ်၊ အမြဲနားလည်နေမှာပဲ။ ဒါကြောင့် ဒီlogicကိုသုံးကို သုံးသင့်ပါတယ်။
+- ခင်ဗျားကတော့ ထင်မှာပေါ့။ classတွေကလည်း အများကြီး packageတွေကလည်း အများကြီး။ ရှုပ်နေတာပဲပေါ့။ No no no။ "ခုရှုပ်မှ နောင်ရှင်း"ဆိုတဲ့ စကားပုံလည်းရှိတယ်လေ။ ခုရှုပ်သလိုထင်ရပေမယ့် နောက်ကရင် ဒါကပဲ ရှင်းရှင်းလင်းလင်း မြင်စေမှာပါ။
+<img src="images/layers.png" alt="Layered Architecture">
+- **Controller Layer** 
+  - controllers the View and Model. It transfer the further processing to **Service Layer.**
+- **Service Layer**
+  - is the employee of the **Controller Layer**. It has to do where the **Controller Layer** tells it to do and it transfers the data to the persistance layer using DTO Object.
+- **Persistance Layer** 
+  - is used to receive the data from DTO object through **Service Layer**. And then give it to DAO to perform CRUD to the database. 
+- **Database Layer**
+  - provides connections for the **Persistance Layer** and is the actual connection between the _Actual Database Server and JAVA._
 
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 - တင်သူ - အေးချမ်းအောင်သွင်

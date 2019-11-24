@@ -1,4 +1,4 @@
-package acat.hibernate.utils;
+package acat.hibernate.hibernateutils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

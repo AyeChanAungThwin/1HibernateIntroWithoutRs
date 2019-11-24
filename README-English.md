@@ -22,7 +22,7 @@
 - DAO(Data Access Object) is the relationship between SQL Server and Java Object. It fetches the data from database and store it in Java Object.
 
 # What is DTO?
-- DTO(Data Transfer Object) is the carrier of data of an object. In Hibernate, when we get a method from dao, **Session** of Hibernate is closed and lead to LazyInitializationException. So basically, DTO saves and use to transfer data of DAO.
+- DTO looks the same an Entity. But its job is to carry the data. DTO(Data Transfer Object) is the carrier of data of an object. In Hibernate, when we get a method from dao, **Session** of Hibernate is closed and lead to LazyInitializationException. So basically, DTO saves and use to transfer data of DAO.
 
 ## Setting up the project
 - Press Alt+Shift+N and create _Maven Project_.
@@ -130,6 +130,20 @@ public class Person {
     - [precision](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
     - [columnDefinition](https://stackoverflow.com/questions/16078681/what-properties-does-column-columndefinition-make-redundant)
     - [scale](https://stackoverflow.com/questions/4078559/how-to-specify-doubles-precision-on-hibernate)
+
+## Application Layering
+- Application Layering is a good practice. Every layer has its own responsibility. It also gives the design loose coupling and easier to understand the whole design when working with team. It doesn't need to be the Java Project. It could be PHP or .Net or etc. But we used this flow to make an understandable design for the project. When you're working with a team, if the code is only understandable for you, then it's not working work. In short, the code must be understandable for everybody in your team. That's the most important part.
+- According to my experience, if you're a beginner, your code is understandable for you for a week or a month. But after 2 or 3 months, it's completely lost from your memory. Why? Because there's no logic. Machine understands the machine but what's important is your code must be understandable by human. After you've got familiar with Design Patterns, SOLID principles, Architecture and Application Layering, your project is understandable after you read it again in many years. That's exactly why you should use this logic.
+- You might be thinking that there are too many classes and packages. It's very complex! No!!! no!! no!!! Once you've understand it, it's the easiest way to remember your project for eternity.
+<img src="images/layers.png" alt="Layered Architecture">
+- **Controller Layer** 
+  - controllers the View and Model. It transfer the further processing to **Service Layer.**
+- **Service Layer**
+  - is the employee of the **Controller Layer**. It has to do where the **Controller Layer** tells it to do and it transfers the data to the persistance layer using DTO Object.
+- **Persistance Layer** 
+  - is used to receive the data from DTO object through **Service Layer**. And then give it to DAO to perform CRUD to the database. 
+- **Database Layer**
+  - provides connections for the **Persistance Layer** and is the actual connection between the _Actual Database Server and JAVA._
 
 ## Electronics Engineer-cum-J2EE Backend Developer ##
 -  Created by - Aye Chan Aung Thwin
